@@ -14,9 +14,9 @@ public class DailyTask extends Task {
     }
 
     @Override
-    public LocalDate getDateOfNextRun() {
+    public LocalDate getDateOfNextRun(LocalDate localDate) {
         LocalDate day1 = this.getLocalDate();
-        LocalDate day2 = LocalDate.now().plusDays(1);
+        LocalDate day2 = localDate.plusDays(1);
         ArrayList<LocalDate> dateList = day1.datesUntil(day2, Period.ofDays(1)).collect(Collectors.toCollection(ArrayList::new));
         LocalDate day3 = day1.plusDays(dateList.toArray().length);
         return day3;

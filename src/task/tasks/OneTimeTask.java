@@ -10,7 +10,7 @@ public class OneTimeTask extends Task {
         super(title, content, type);
     }
 
-    public LocalDate getDateOfNextRun() {
+    public LocalDate getDateOfNextRun(LocalDate localDate) {
         return this.getLocalDate();
     }
 

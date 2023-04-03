@@ -13,9 +13,9 @@ public class WeeklyTask extends Task {
         super(title, content, type);
     }
 
-    public LocalDate getDateOfNextRun() {
+    public LocalDate getDateOfNextRun(LocalDate localDate) {
         LocalDate day1 = this.getLocalDate();
-        LocalDate day2 = LocalDate.now().plusDays(1);
+        LocalDate day2 = localDate.plusDays(1);
         ArrayList<LocalDate> dateList = day1.datesUntil(day2, Period.ofWeeks(1)).collect(Collectors.toCollection(ArrayList::new));
         LocalDate day3 = day1.plusWeeks(dateList.toArray().length);
         return day3;

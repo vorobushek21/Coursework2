@@ -55,7 +55,7 @@ public abstract class Task {
         return localDate;
     }
 
-    public abstract LocalDate getDateOfNextRun();
+    public abstract LocalDate getDateOfNextRun(LocalDate localDate);
 
     public LocalDate getLocalDate() {
         return localDate;
